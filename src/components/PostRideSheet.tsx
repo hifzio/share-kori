@@ -90,7 +90,7 @@ export function PostRideSheet({ route, initialProfile, onClose, onSubmit }: Post
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center">
+    <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4">
       <button
         type="button"
         aria-label={t("close")}
@@ -103,7 +103,7 @@ export function PostRideSheet({ route, initialProfile, onClose, onSubmit }: Post
         role="dialog"
         aria-modal="true"
         aria-labelledby="post-title"
-        className="relative flex max-h-[94dvh] w-full max-w-[430px] animate-sheet-up flex-col rounded-t-[28px] border-t border-indigo-400/30 bg-zinc-950 shadow-2xl"
+        className="relative flex max-h-[94vh] supports-[height:100dvh]:max-h-[94dvh] sheet-frame animate-sheet-up flex-col rounded-t-[28px] border-t border-indigo-400/30 sm:rounded-[28px] sm:border bg-zinc-950 shadow-2xl"
       >
         <div className="mx-auto mt-2.5 h-1.5 w-12 shrink-0 rounded-full bg-line/20" aria-hidden />
 

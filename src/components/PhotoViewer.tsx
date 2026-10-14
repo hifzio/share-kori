@@ -37,7 +37,7 @@ export function PhotoViewer({ src, alt, onClose }: PhotoViewerProps) {
         <X className="h-6 w-6" aria-hidden />
       </button>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className="max-h-[85dvh] max-w-full rounded-2xl object-contain" />
+      <img src={src} alt={alt} className="max-h-[85vh] supports-[height:100dvh]:max-h-[85dvh] max-w-full rounded-2xl object-contain" />
     </div>
   );
 }

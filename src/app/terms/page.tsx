@@ -9,7 +9,7 @@ export default function TermsPage() {
       <section>
         <h2>The service</h2>
         <p>
-          RickshawMate is a matching tool. We do not provide rickshaws, set fares, or take part in rides. Any
+          ShareKori is a matching tool. We do not provide rickshaws, set fares, or take part in rides. Any
           arrangement you make with another commuter is between you and them.
         </p>
       </section>

@@ -22,7 +22,7 @@ export function BottomNav({ active, hasLivePost, onFind, onPost, onRides }: Bott
   return (
     <nav
       aria-label="Main"
-      className="fixed inset-x-0 bottom-0 z-30 mx-auto w-full max-w-[430px] border-t border-line/10 bg-navy-950/90 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl"
+      className="app-frame fixed inset-x-0 bottom-0 z-30 border-t border-line/10 bg-navy-950/90 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl sm:max-w-[520px] sm:rounded-t-3xl sm:border-x"
     >
       <div className="flex h-[68px] items-end px-2">
         <button type="button" onClick={onFind} aria-current={active === "find" ? "page" : undefined} className={`${side(active === "find")} h-full`}>

@@ -446,7 +446,7 @@ function LiveApp() {
   const ready = now !== null && !loading;
 
   return (
-    <div className="mx-auto min-h-dvh w-full max-w-[430px] bg-zinc-950 shadow-2xl shadow-black">
+    <div className="app-frame min-h-app bg-zinc-950 shadow-2xl shadow-black">
       <Header
         onHome={goHome}
         onSignIn={() => requireSignIn({ type: "none" })}

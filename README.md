@@ -1,4 +1,4 @@
-# RickshawMate Dhaka (বনশ্রী-রামপুরা রিকশা পুল)
+# ShareKori Dhaka (বনশ্রী-রামপুরা রিকশা পুল)
 
 A mobile-first PWA that matches commuters at fixed landmarks along the Rampura–Banasree–Meradia–Aftab Nagar corridor so they can share a rickshaw. Phase 2 runs on Supabase (Postgres, Storage, Realtime, anonymous auth).
 
@@ -39,7 +39,7 @@ Browsing the feed needs no account. Tapping **I'm Waiting Here** or **Share This
 2. **Sign In / Providers → Email:** keep it enabled.
 3. **Sign In / Providers → Google:** enable it and paste a Client ID and Secret (below).
 4. **Sign In / Providers → Allow anonymous sign-ins:** turn this **off**. Migration 4 also rejects anonymous sessions.
-5. **Email Templates → Magic Link:** make sure the body contains `{{ .Token }}` so the email shows the 6-digit code. For example: `<h2>Your code</h2><p>Enter this code in RickshawMate: <b>{{ .Token }}</b></p>`
+5. **Email Templates → Magic Link:** make sure the body contains `{{ .Token }}` so the email shows the 6-digit code. For example: `<h2>Your code</h2><p>Enter this code in ShareKori: <b>{{ .Token }}</b></p>`
 
 **Google credentials:** in [Google Cloud Console](https://console.cloud.google.com/apis/credentials), create an **OAuth client ID** of type *Web application*. Add `https://<your-project-ref>.supabase.co/auth/v1/callback` under **Authorized redirect URIs**, then copy the Client ID and Secret into Supabase.
 
@@ -113,7 +113,7 @@ src/
 supabase/
   migrations/   SQL: tables, indexes, RLS, RPCs, cron, realtime, storage
 public/         PWA manifest, app icons, favicon, logo mark and social-share image
-brand/          Original logo file (the generated icons in public/ are cut from it)
+brand/          Original logo files: sharekori-symbol.png (emblem only) and sharekori-lockup.png (with the name). The icons, favicon, header mark, share image and iPhone launch screens in public/ are all generated from these
 ```
 
 ## Scripts

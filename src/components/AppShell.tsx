@@ -5,7 +5,7 @@
  */
 export function AppShell() {
   return (
-    <div className="mx-auto min-h-dvh w-full max-w-[430px] bg-zinc-950">
+    <div className="app-frame min-h-app bg-zinc-950">
       <header className="border-b border-line/10 bg-navy-950 pt-[env(safe-area-inset-top)]">
         <div className="flex items-center justify-between gap-3 px-4 pb-2 pt-3">
           <div className="flex min-w-0 items-center gap-3">

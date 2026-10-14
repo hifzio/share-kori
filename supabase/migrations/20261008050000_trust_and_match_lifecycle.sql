@@ -1,4 +1,4 @@
--- RickshawMate Dhaka — match lifecycle, trust statistics, live-route overview.
+-- ShareKori Dhaka — match lifecycle, trust statistics, live-route overview.
 -- Run AFTER migrations 1-5, once. Idempotent.
 --   * a match now ends explicitly: 'completed' or 'cancelled' (by either rider)
 --   * public profiles expose trust numbers (completed, cancelled, posted, joined, rate)

@@ -7,9 +7,9 @@ export default function PrivacyPage() {
   return (
     <LegalPage title="Privacy Policy" updated="October 2026">
       <section>
-        <h2>What RickshawMate does</h2>
+        <h2>What ShareKori does</h2>
         <p>
-          RickshawMate helps commuters in Dhaka find someone to share a rickshaw with at fixed
+          ShareKori helps commuters in Dhaka find someone to share a rickshaw with at fixed
           landmarks. To make that work, some information is shared with other commuters.
         </p>
       </section>

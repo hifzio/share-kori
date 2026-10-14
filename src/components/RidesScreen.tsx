@@ -75,7 +75,7 @@ export function RidesScreen({ items, loading, now, onViewProfile, onFind }: Ride
             </button>
           </div>
         ) : (
-          <ul className="space-y-3">
+          <ul className="grid gap-3 lg:grid-cols-2">
             {items.map((it) => {
               const live = it.status === "waiting" && it.expiresAt > now;
               const cancelledMatch = it.status === "cancelled" && Boolean(it.partnerId);

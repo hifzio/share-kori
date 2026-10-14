@@ -1,4 +1,4 @@
--- RickshawMate Dhaka — require a real account (Google / email) to post or claim.
+-- ShareKori Dhaka — require a real account (Google / email) to post or claim.
 -- Run AFTER the first three migrations, once. Idempotent.
 -- Browsing the feed stays public; only create_ride / claim_ride need a signed-in user.
 -- Anonymous Supabase sessions (is_anonymous = true) are refused even if anonymous

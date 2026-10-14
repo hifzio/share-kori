@@ -49,7 +49,7 @@ export function HomeScreen({ liveRoutes, liveLoaded, liveError, onRetryLive, now
             <button
               type="button"
               onClick={() => document.getElementById("live-now")?.scrollIntoView({ behavior: "smooth", block: "start" })}
-              className="flex h-12 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-white text-sm font-extrabold text-ink shadow-lg active:scale-95"
+              className="flex h-12 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-white sm:flex-none sm:px-8 text-sm font-extrabold text-ink shadow-lg active:scale-95"
             >
               {t("heroSeeLive")}
               <ArrowRight className="h-4 w-4" aria-hidden />
@@ -87,6 +87,8 @@ export function HomeScreen({ liveRoutes, liveLoaded, liveError, onRetryLive, now
         </ol>
       </section>
 
+      {/* On wide screens the live list and the route finder sit side by side. */}
+      <div className="lg:grid lg:grid-cols-[1.35fr_1fr] lg:items-start lg:gap-2">
       <LiveRoutes
         routes={liveRoutes}
         loaded={liveLoaded}
@@ -124,6 +126,7 @@ export function HomeScreen({ liveRoutes, liveLoaded, liveError, onRetryLive, now
           </button>
         )}
       </section>
+      </div>
     </div>
   );
 }

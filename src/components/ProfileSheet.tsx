@@ -38,7 +38,7 @@ export function ProfileSheet({ onClose, onSave, initialName = "" }: ProfileSheet
   };
 
   return (
-    <div className="fixed inset-0 z-[55] flex items-end justify-center">
+    <div className="fixed inset-0 z-[55] flex items-end justify-center sm:items-center sm:p-4">
       <button
         type="button"
         aria-label={t("close")}
@@ -50,7 +50,7 @@ export function ProfileSheet({ onClose, onSave, initialName = "" }: ProfileSheet
         role="dialog"
         aria-modal="true"
         aria-labelledby="profile-title"
-        className="relative w-full max-w-[430px] animate-sheet-up rounded-t-[28px] border-t border-indigo-400/30 bg-zinc-950 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 shadow-2xl"
+        className="relative sheet-frame animate-sheet-up rounded-t-[28px] border-t border-indigo-400/30 sm:rounded-[28px] sm:border bg-zinc-950 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 shadow-2xl"
       >
         <div className="mx-auto h-1.5 w-12 rounded-full bg-line/20" aria-hidden />
         <div className="flex items-center justify-between pb-4 pt-3">

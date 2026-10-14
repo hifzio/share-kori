@@ -5,11 +5,11 @@ import { TriangleAlert } from "lucide-react";
 
 export default function GlobalError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
-    console.error("[RickshawMate:error]", error);
+    console.error("[ShareKori:error]", error);
   }, [error]);
 
   return (
-    <main className="mx-auto flex min-h-dvh max-w-[430px] flex-col items-center justify-center px-6 text-center">
+    <main className="app-frame min-h-app flex flex-col items-center justify-center px-6 text-center">
       <TriangleAlert className="h-14 w-14 text-amber-300" aria-hidden />
       <h1 className="mt-5 text-2xl font-extrabold text-fg">Something went wrong</h1>
       <p className="mt-2 text-base text-slate-300">কিছু ভুল হয়েছে। আবার চেষ্টা করুন।</p>

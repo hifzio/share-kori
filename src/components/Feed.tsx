@@ -37,7 +37,7 @@ export function Feed({ posts, now, busyId, onShare, onRemove, onViewProfile, onP
         </span>
       </div>
 
-      <div className="flex flex-col gap-3.5">
+      <div className="grid gap-3.5 lg:grid-cols-2">
         {posts.map((post, i) => (
           <CommuterCard
             key={post.id}

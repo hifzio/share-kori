@@ -72,7 +72,8 @@ export function MatchedScreen({ match, busy, onComplete, onCancel, onClose, onVi
 
   return (
     <div className="fixed inset-0 z-[60] flex justify-center bg-zinc-950">
-      <main className="flex h-dvh w-full max-w-[430px] animate-fade-in flex-col overflow-y-auto px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))]">
+      <main className="app-frame h-app animate-fade-in overflow-y-auto">
+        <div className="flex min-h-full flex-col px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))]">
         <div
           role="status"
           className={`flex animate-pop-in items-center gap-3 rounded-3xl bg-gradient-to-br ${banner.cls} p-4 text-ink shadow-lg shadow-emerald-500/20`}
@@ -210,6 +211,7 @@ export function MatchedScreen({ match, busy, onComplete, onCancel, onClose, onVi
               </button>
             </>
           )}
+        </div>
         </div>
       </main>
     </div>

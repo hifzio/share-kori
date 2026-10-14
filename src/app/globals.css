@@ -66,8 +66,69 @@
   --c-rose-400: 225 29 72;
 }
 
+@layer components {
+  /*
+   * The app column. A phone gets the full width (up to 430px); tablets and desktop windows
+   * (installed or not) get progressively more room instead of a thin strip in the middle.
+   * Left/right safe-area padding keeps content clear of a notch in landscape.
+   */
+  .app-frame {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 430px;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  @media (min-width: 640px) {
+    .app-frame {
+      max-width: 620px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .app-frame {
+      max-width: 1000px;
+    }
+  }
+
+  /* Dialog width: bottom sheet on phones, centred card from 640px up. */
+  .sheet-frame {
+    width: 100%;
+    max-width: 430px;
+  }
+  @media (min-width: 640px) {
+    .sheet-frame {
+      max-width: 500px;
+    }
+  }
+
+  /* 100dvh where supported (accounts for mobile browser bars), 100vh before that. */
+  .min-h-app {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .h-app {
+    height: 100vh;
+    height: 100dvh;
+  }
+}
+
+/*
+ * iOS "Add to Home Screen" draws web content under the status bar (black-translucent, white
+ * text). This fixed strip keeps that area dark navy in BOTH themes so the clock and battery stay
+ * readable. It has zero height everywhere the safe-area inset is 0 (normal browsers, Android).
+ */
+.safe-area-top {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: env(safe-area-inset-top);
+  background: #0a0f2e;
+  z-index: 100;
+  pointer-events: none;
+}
+
 html,
 body {
+  touch-action: manipulation; /* no 300ms tap delay or double-tap zoom on buttons */
   overscroll-behavior-y: none;
   background-color: rgb(var(--c-zinc-950));
   color: rgb(var(--c-slate-100));
@@ -78,6 +139,16 @@ body {
 body {
   overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
+}
+
+/* On wide screens the app is a framed column over a slightly different backdrop. */
+@media (min-width: 1024px) {
+  body {
+    background-color: rgb(var(--c-zinc-800));
+  }
+  .app-frame {
+    box-shadow: 0 0 80px rgb(0 0 0 / 0.25);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -46,13 +46,13 @@ export function UserProfileSheet({ userId, fallbackName = "", fallbackPhotoUrl, 
   const name = profile?.name || fallbackName || t("commuter");
   const photo = profile?.photo_url ?? fallbackPhotoUrl;
   return (
-    <div className="fixed inset-0 z-[64] flex items-end justify-center">
+    <div className="fixed inset-0 z-[64] flex items-end justify-center sm:items-center sm:p-4">
       <button type="button" aria-label={t("close")} onClick={onClose} className="absolute inset-0 animate-fade-in bg-black/70" />
       <div
         role="dialog"
         aria-modal="true"
         aria-label={name}
-        className="relative max-h-[92dvh] w-full max-w-[430px] animate-sheet-up overflow-y-auto rounded-t-[28px] border-t border-indigo-400/30 bg-zinc-950 px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-2xl"
+        className="relative max-h-[92vh] supports-[height:100dvh]:max-h-[92dvh] sheet-frame animate-sheet-up overflow-y-auto rounded-t-[28px] border-t border-indigo-400/30 sm:rounded-[28px] sm:border bg-zinc-950 px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-2xl"
       >
         <div className="mx-auto h-1.5 w-12 rounded-full bg-line/20" aria-hidden />
         <button

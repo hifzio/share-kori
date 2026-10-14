@@ -5,7 +5,7 @@ type Dict = Record<string, string>;
 /** `{n}` style placeholders are filled by `t()` in lib/i18n.ts. */
 export const DICTIONARY: Record<Lang, Dict> = {
   en: {
-    appName: "RickshawMate",
+    appName: "ShareKori",
     tagline: "বনশ্রী-রামপুরা রিকশা পুল",
     langToggle: "বাংলা",
     from: "From",
@@ -193,7 +193,7 @@ export const DICTIONARY: Record<Lang, Dict> = {
     photoFailed: "Photo upload failed, so we posted without it.",
   },
   bn: {
-    appName: "রিকশামেট",
+    appName: "শেয়ারকরি",
     tagline: "বনশ্রী-রামপুরা রিকশা পুল",
     langToggle: "EN",
     from: "কোথা থেকে",
