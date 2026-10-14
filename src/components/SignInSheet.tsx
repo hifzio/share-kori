@@ -199,10 +199,11 @@ export function SignInSheet({ onClose }: SignInSheetProps) {
         )}
 
         <p className="mt-4 text-center text-xs text-slate-500">
-          By continuing you agree to the{" "}
-          <Link href="/terms" className="font-semibold text-indigo-300 underline">Terms</Link>,{" "}
-          <Link href="/acceptable-use" className="font-semibold text-indigo-300 underline">Acceptable Use Policy</Link> and{" "}
-          <Link href="/privacy" className="font-semibold text-indigo-300 underline">Privacy Policy</Link>.
+          {t("consentPre")}{" "}
+          <Link href="/terms" className="font-semibold text-indigo-300 underline">{t("consentTerms")}</Link>,{" "}
+          <Link href="/acceptable-use" className="font-semibold text-indigo-300 underline">{t("consentAup")}</Link>{" "}
+          {t("consentAnd")}{" "}
+          <Link href="/privacy" className="font-semibold text-indigo-300 underline">{t("consentPrivacy")}</Link>
         </p>
 
         {error && (

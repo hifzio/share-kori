@@ -108,7 +108,9 @@ export function MenuSheet({ onClose }: { onClose: () => void }) {
 
         <h3 className="mb-2 mt-6 text-xs font-bold uppercase tracking-wider text-slate-500">{t("helpLegal")}</h3>
         <ul className="divide-y divide-line/10 overflow-hidden rounded-2xl border border-line/10 bg-zinc-900">
-          {LEGAL_PAGES.map(({ key, href, icon: Icon, title, desc }) => (
+          {LEGAL_PAGES.map(({ key, href, icon: Icon, ...tx }) => {
+            const { title, desc } = tx[lang];
+            return (
             <li key={key}>
               <Link href={href} className="flex min-h-[60px] items-center gap-3 px-4 py-2.5 transition active:bg-zinc-800">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-400/15 text-indigo-300">
@@ -121,7 +123,8 @@ export function MenuSheet({ onClose }: { onClose: () => void }) {
                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-500" aria-hidden />
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
         <p className="mt-5 text-center text-xs text-slate-600">{t("appName")} · {t("tagline")}</p>
       </div>
