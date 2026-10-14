@@ -10,6 +10,7 @@ import { HomeScreen } from "@/components/HomeScreen";
 import { useAuth } from "@/components/AuthProvider";
 import { RidesScreen } from "@/components/RidesScreen";
 import { LivePostBanner } from "@/components/LivePostBanner";
+import { MenuSheet } from "@/components/MenuSheet";
 import { SignInSheet } from "@/components/SignInSheet";
 import { UserProfileSheet } from "@/components/UserProfileSheet";
 import { useHubs } from "@/components/HubsProvider";
@@ -141,6 +142,7 @@ function LiveApp() {
 
   const [sheetOpen, setSheetOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   // Bottom-bar tabs share one page: switching swaps the content in place (no overlay).
   const [tab, setTab] = useState<"find" | "rides">("find");
   const [profileView, setProfileView] = useState<{ id: string; name: string; photoUrl?: string } | null>(null);
@@ -452,6 +454,7 @@ function LiveApp() {
         onSignIn={() => requireSignIn({ type: "none" })}
         onProfile={openMyProfile}
         onHistory={openRides}
+        onMenu={() => setMenuOpen(true)}
       />
 
       {tab === "find" && myLive && now !== null && (
@@ -537,6 +540,7 @@ function LiveApp() {
         />
       )}
       {signInOpen && <SignInSheet onClose={closeSignIn} />}
+      {menuOpen && <MenuSheet onClose={() => setMenuOpen(false)} />}
       {match && (
         <MatchedScreen
           match={match}

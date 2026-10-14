@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
+import Link from "next/link";
 import { Loader2, Mail, X } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
 import { useLang } from "@/components/LangProvider";
@@ -196,6 +197,13 @@ export function SignInSheet({ onClose }: SignInSheetProps) {
             </div>
           </form>
         )}
+
+        <p className="mt-4 text-center text-xs text-slate-500">
+          By continuing you agree to the{" "}
+          <Link href="/terms" className="font-semibold text-indigo-300 underline">Terms</Link>,{" "}
+          <Link href="/acceptable-use" className="font-semibold text-indigo-300 underline">Acceptable Use Policy</Link> and{" "}
+          <Link href="/privacy" className="font-semibold text-indigo-300 underline">Privacy Policy</Link>.
+        </p>
 
         {error && (
           <p role="alert" className="mt-3 rounded-xl bg-rose-500/10 p-3 text-sm font-semibold text-rose-300 ring-1 ring-rose-400/25">

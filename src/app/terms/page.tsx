@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: "Terms of Use" };
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Use" updated="October 2026">
+    <LegalPage page="terms" intro="The short version: ShareKori only helps you find someone to share a rickshaw with. Everything after that is between you and them." title="Terms of Use" updated="October 2026">
       <section>
         <h2>The service</h2>
         <p>

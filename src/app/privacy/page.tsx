@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: "Privacy Policy" };
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="October 2026">
+    <LegalPage page="privacy" intro="Your phone number is shown only to the one person you match with. We do not sell your data or run ad trackers." title="Privacy Policy" updated="October 2026">
       <section>
         <h2>What ShareKori does</h2>
         <p>

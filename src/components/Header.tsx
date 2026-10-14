@@ -1,20 +1,19 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { Menu } from "lucide-react";
 import { AccountButton } from "@/components/AccountButton";
 import { useLang } from "@/components/LangProvider";
-import { useTheme } from "@/components/ThemeProvider";
 
 interface HeaderProps {
   onSignIn: () => void;
   onProfile: () => void;
   onHistory: () => void;
   onHome: () => void;
+  onMenu: () => void;
 }
 
-export function Header({ onSignIn, onProfile, onHistory, onHome }: HeaderProps) {
+export function Header({ onSignIn, onProfile, onHistory, onHome, onMenu }: HeaderProps) {
   const { t, toggleLang } = useLang();
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-30 border-b border-line/10 bg-navy-950/85 pt-[env(safe-area-inset-top)] backdrop-blur-xl">
@@ -48,11 +47,12 @@ export function Header({ onSignIn, onProfile, onHistory, onHome }: HeaderProps) 
           </button>
           <button
             type="button"
-            onClick={toggleTheme}
-            aria-label={t(theme === "dark" ? "switchToLight" : "switchToDark")}
+            onClick={onMenu}
+            aria-label={t("openMenu")}
+            aria-haspopup="dialog"
             className="flex h-10 w-10 items-center justify-center rounded-xl bg-line/5 text-indigo-300 ring-1 ring-line/10 transition active:scale-95"
           >
-            {theme === "dark" ? <Sun className="h-[18px] w-[18px]" aria-hidden /> : <Moon className="h-[18px] w-[18px]" aria-hidden />}
+            <Menu className="h-5 w-5" aria-hidden />
           </button>
           <AccountButton onSignIn={onSignIn} onHistory={onHistory} onProfile={onProfile} />
         </div>
